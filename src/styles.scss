@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root{
+  --dark: #020617;
+  --light: #ffffff;
+}
+
+.dark{
+  --dark: #ffffff;
+  --light: #020617;
+}
+
+$light: var(--light);
+$dark: var(--dark);
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background: $light ;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,span{
+  @apply text-gray-950 dark:text-white
+}
+
+
+.page{
+  @apply flex items-center justify-center h-full py-8;
+
+}
+
+
+
+

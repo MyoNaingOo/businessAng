@@ -1,0 +1,42 @@
+<div class="flex flex-wrap items-center justify-around relative  py-6 ">
+
+
+  @for (product of products; track $index) {
+
+  <div (click)="showProductId(product.id)"
+    class="w-2/12 h-[250px] m-6 bg-gray-100 dark:bg-gray-900 rounded-lg items-center flex flex-col ">
+
+    <img alt="" class="w-full h-[200px] border-none ">
+    <p>{{ product.name }}</p>
+    <p>{{ product.price }}MMK</p>
+
+
+  </div>
+  }
+
+
+
+  <!-- show sale card start -->
+
+
+  @if (showPro != undefined ) {
+
+  <div id="showProCard" class="w-8/12   z-10 absolute top-3 h-96  bg-gray-100 dark:bg-gray-900">
+
+    <div class="w-full justify-end flex">
+
+      <button (click)="closeshow()" class="mx-5 my-2 px-3 rounded-lg bg-blue-500 text-lg  ">
+        <fa-icon [icon]="xmark"></fa-icon>
+      </button>
+    </div>
+
+
+    <app-sale-pro [product]="showPro[0]" ></app-sale-pro>
+
+  </div>
+  }
+  <!-- show sale card end -->
+
+
+
+</div>

@@ -1,0 +1,23 @@
+<div class="page  ">
+
+  <div
+    class="py-16  rounded-xl w-11/12 bg-gray-100 dark:bg-gray-900  md:w-1/2 items-center justify-center flex flex-col">
+
+    <h2 class="text-xl">Well Come</h2>
+    <p>Check your gmail send authentication otp code</p>
+    @if (code != undefined || code !=null ) {
+
+      <p> {{ code }} </p>
+    }
+
+    <p class="px-4 py-1 my-3 border border-blue-500 bg-gray-200 dark:bg-gray-800 rounded-full ">{{ gmail }}</p>
+    <form #f="ngForm" (submit)="send(f)" class="items-center justify-center flex flex-col w-full  ">
+      <input type="number" class="" name="otp" #otp="ngModel" [(ngModel)]="code"
+      ngModel>
+      <input type="submit" value="SEND">
+    </form>
+  </div>
+
+
+
+</div>

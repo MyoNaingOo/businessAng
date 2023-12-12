@@ -1,0 +1,61 @@
+<div class="page">
+
+
+  <div class="container active" id="container">
+    <div class="form-container sign-up">
+      <form #f="ngForm" (submit)="register(f)" >
+        <h1  >Create Account</h1>
+        <input type="text" placeholder="Name" name="name" #name="ngModel" ngModel >
+        <input type="email" placeholder="gmail" name="Gmail" #gmail="ngModel" ngModel >
+        <input [type]="showpass ? 'text':'password'" placeholder="Password" name="password" #password="ngModel" ngModel>
+        <input [type]="showpass ? 'text':'password'" placeholder="Confirm Password" name="confrim_password" #Confine_password="ngModel" ngModel>
+        <div class="flex w-full">
+          <div class="dark:text-white">
+            <input type="radio" id="showpass_create" class=" hidden " (click)="showpassbtn()">
+            <label for="showpass"><fa-icon [icon]=" showpass ? eye : eye_slash ">
+            </fa-icon></label>
+            Show Password?
+          </div>
+        </div>
+        <input type="submit" class="actionBtn " value="Sign Up">
+        <p class="mt-10 inline md:hidden">Enter your personal details to use all of site features</p>
+        <button class="text-blue-500 inline md:hidden " (click)="remove()">Sign In</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form #f="ngForm" (submit)="login(f)" >
+        <h1>Sign In</h1>
+        <input type="email" placeholder="gmail" name="Gmail" #gmail="ngModel" ngModel >
+        <input [type]="showpass ? 'text':'password'" placeholder="Password" name="password" #password="ngModel" ngModel>
+        <div class="flex w-full">
+          <div class="dark:text-white">
+            <input type="radio" id="showpass" class=" hidden " (click)="showpassbtn()">
+            <label for="showpass"><fa-icon [icon]=" showpass ? eye : eye_slash ">
+            </fa-icon></label>
+            Show Password?
+          </div>
+        </div>
+        <a href="#" class="text-sm my-4 ">Forget Your Password?</a>
+        <button class="actionBtn">Sign In</button>
+        <p class=" mt-10 inline md:hidden">Register with your personal details to use all of site features</p>
+        <button class="text-blue-500 inline md:hidden " (click)="add()">Sign up</button>
+      </form>
+    </div>
+    <div class="toggle-container hidden md:inline ">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+
+          <h1 class="text-2xl" >Welcome Back!</h1>
+          <p>Enter your personal details to use all of site features</p>
+          <button class="px-2 py-1" id="login" (click)="remove()">Sign In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1 class="text-2xl" >Hello, Friend!</h1>
+          <p>Register with your personal details to use all of site features</p>
+          <button class="px-2 py-1" id="register" (click)="add()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

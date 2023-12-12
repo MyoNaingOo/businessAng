@@ -1,0 +1,43 @@
+
+
+
+
+
+
+input{
+
+  @apply outline-none  mt-5 py-1 px-3 text-sm md:text-base rounded-md w-8/12  border border-blue-500
+         dark:text-white;
+}
+
+
+input[type="number"]{
+  @apply bg-transparent;
+}
+
+
+input[type="submit"]{
+  @apply bg-blue-500;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+
+
+
